@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+
 public class MainActivity2 extends AppCompatActivity implements ItemClickListner {
 
     TextView greet ; // Greeting Textview
@@ -60,6 +62,9 @@ public class MainActivity2 extends AppCompatActivity implements ItemClickListner
         recyclerView = findViewById(R.id.recyclerView1st) ;
 
         listData = new ModelClass1st[]{
+                new ModelClass1st(R.drawable._liked_songs_bg, "Liked Songs" , songs_library_activity4.class ,
+                        getDrawable(R.drawable.verticle_color_4)
+                        ,getDrawable(R.drawable.horizontal_color_4)),
                 new ModelClass1st(R.drawable.new_bg_2_alan , "Alan Walker" , songs_library_activity1.class ,
                         getDrawable(R.drawable.verticle_color_1)
                         ,getDrawable(R.drawable.horizontal_color_1)) ,
@@ -68,10 +73,7 @@ public class MainActivity2 extends AppCompatActivity implements ItemClickListner
                         ,getDrawable(R.drawable.horizontal_color_2)) ,
                 new ModelClass1st(R.drawable._lofi_bg_ , "Lofi beats" , songs_library_activity3.class ,
                         getDrawable(R.drawable.verticle_color_3)
-                        ,getDrawable(R.drawable.horizontal_color_3)) ,
-                new ModelClass1st(R.drawable.song1 , " " , songs_library_activity4.class ,
-                        getDrawable(R.drawable.verticle_color_4)
-                        ,getDrawable(R.drawable.horizontal_color_4)) ,
+                        ,getDrawable(R.drawable.horizontal_color_3))
         } ;
 
         AdapterClass1st adapterClass1st = new AdapterClass1st(listData) ;

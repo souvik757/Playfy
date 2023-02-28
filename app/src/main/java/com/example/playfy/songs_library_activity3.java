@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import jp.wasabeef.recyclerview.animators.FadeInDownAnimator;
+import jp.wasabeef.recyclerview.animators.FadeInUpAnimator;
+
 public class songs_library_activity3 extends AppCompatActivity implements ItemClickListner{
 
     Button Back ; // to go back to previous page
