@@ -54,6 +54,7 @@
 
 
     <View
+        android:id="@+id/view11"
         android:layout_width="382dp"
         android:layout_height="385dp"
         android:background="#090909"
@@ -155,6 +156,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/songName"
         app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/AddToLike"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/baseline_cloud_download_24"
+        app:layout_constraintBottom_toTopOf="@+id/TimeView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view11"
+        app:layout_constraintVertical_bias="0.137" />
 
     <SeekBar
         android:id="@+id/seekBar"

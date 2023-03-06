@@ -21,6 +21,7 @@ public class playerActivity extends AppCompatActivity {
 
     TextView _song_  , _progressTimer_ , _timeView_ , _current_status_ , _lib_name_ ;
     Button _play_ , _fast_ , _back_ , _page_back_ ;
+    Button _addTOlike_ ;
     MediaPlayer player ;
     ImageView imageView ;
     SeekBar progressbar ;
@@ -35,6 +36,8 @@ public class playerActivity extends AppCompatActivity {
 
     // variable to handle first time player
     int _first_open_ = -1 ;
+    // semaphore like var to handle insertion to liked songs
+    int _like_ = -1 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class playerActivity extends AppCompatActivity {
         _current_status_ = findViewById(R.id.status) ;
         _lib_name_ = findViewById(R.id.LibName) ;
         _page_back_ = findViewById(R.id.backBTN) ;
+        _addTOlike_ = findViewById(R.id.AddToLike) ;
         progressbar.setClickable(false) ;
 
         Intent i = getIntent() ;
@@ -60,6 +64,25 @@ public class playerActivity extends AppCompatActivity {
         String lib_context = i.getStringExtra("NameOfLib") ;
         _lib_name_.setText(lib_context);
         String _Song_Name_ = i.getStringExtra("NameOfSong") ;
+        // --
+
+        _addTOlike_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _like_++ ;
+                if(_like_ % 2  == 0)
+                {
+                    _addTOlike_.setBackground(getDrawable(R.drawable.baseline_cloud_done_24));
+                }
+                else
+                {
+                    _addTOlike_.setBackground(getDrawable(R.drawable.baseline_cloud_download_24));
+                }
+            }
+        });
+
+
+
         //---
         if (_Song_Name_.equals("Above The Sky")){
             _song_.setText("Above The Sky");
