@@ -80,6 +80,7 @@ public class songs_library_activity3 extends AppCompatActivity implements ItemCl
                 new ModelClass2nd(R.drawable.lofi_bg , "Sleepy Eyes" , "20") ,
         } ;
 
+
         AdapterClass2nd adapterClass2nd = new AdapterClass2nd(Song_List) ;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -90,7 +91,7 @@ public class songs_library_activity3 extends AppCompatActivity implements ItemCl
     }
 
     @Override
-    public void onCLick(View view, int pos) {
+    public  void onCLick(View view, int pos) {
         Intent i = new Intent(this , playerActivity.class) ;
         i.putExtra("NameOfSong" , Song_List[pos].getText()) ;
         i.putExtra("NameOfLib" , "Lofi beats") ;

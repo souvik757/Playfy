@@ -1,6 +1,7 @@
 package com.example.playfy;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.lang.reflect.Array;
 import java.util.concurrent.TimeUnit;
 
 public class playerActivity extends AppCompatActivity {
@@ -39,6 +41,13 @@ public class playerActivity extends AppCompatActivity {
     // semaphore like var to handle insertion to liked songs
     int _like_ = -1 ;
 
+    ModelClassSaved[] modelClassSaveds ;
+
+
+
+ //   public void _add_(ModelClassSaved[] _saves_, TextView _text_ , R _image_ , String index){
+ //       _saves_[index] = new ModelClassSaved(, _text_.toString() , index) ;
+ //   }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _first_open_++ ;
@@ -64,6 +73,7 @@ public class playerActivity extends AppCompatActivity {
         String lib_context = i.getStringExtra("NameOfLib") ;
         _lib_name_.setText(lib_context);
         String _Song_Name_ = i.getStringExtra("NameOfSong") ;
+
         // --
 
         _addTOlike_.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +83,9 @@ public class playerActivity extends AppCompatActivity {
                 if(_like_ % 2  == 0)
                 {
                     _addTOlike_.setBackground(getDrawable(R.drawable.baseline_cloud_done_24));
+                    ModelClassSaved._list.add(new ModelClassSaved(R.drawable.lofi_bg , _Song_Name_ ,
+                            " ")) ;
+
                 }
                 else
                 {
