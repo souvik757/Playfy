@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -35,7 +36,7 @@ public class MainActivity2 extends AppCompatActivity implements ItemClickListner
                 startActivity(new Intent(getApplicationContext() , edit_profile.class));
             }
         });
-        ConstraintLayout LayOut = findViewById(R.id._layout_) ;
+        LinearLayout LayOut = findViewById(R.id._layout_) ;
         // Greeting -
         Calendar c = Calendar.getInstance() ;
         int Hour = c.get(Calendar.HOUR_OF_DAY) ;

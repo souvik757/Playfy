@@ -51,15 +51,6 @@ public class songs_library_activity4 extends AppCompatActivity {
             }
         });
     }
- //   public void _onCLick_(View view) {
- //       Intent i = new Intent(this , playerActivity.class) ;
- //       i.putExtra("NameOfSong" , _songs_) ;
- //       i.putExtra("NameOfLib" , "Liked Songs") ;
- //       String x = _songs_[pos].getText() ;
- //       _lastSavedSong_.setText(x);
- //       SaveClickedText(x) ;
- //       startActivity(i);
- //   }
     public void SaveClickedText(String x){
         SharedPreferences shared = getSharedPreferences("LastPlayed" ,
                 MODE_PRIVATE) ;

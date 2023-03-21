@@ -15,7 +15,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class songs_library_activity2 extends AppCompatActivity implements ItemClickListner{
 
-    Button Back ; // to go back to previous page
     Button Like ; // to like artist
     int count = 1 ;// variable to change button background and conditions
     ModelClass2nd[] Song_List ; // Data source array
@@ -27,14 +26,6 @@ public class songs_library_activity2 extends AppCompatActivity implements ItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs_library2);
 
-        Back = findViewById(R.id.backBTN) ; // Initialize back button
-        // setting on click event for back button
-        Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         Like = findViewById(R.id.LikeBTN) ; // initializing like button
         Like.setOnClickListener(new View.OnClickListener() {
@@ -92,5 +83,10 @@ public class songs_library_activity2 extends AppCompatActivity implements ItemCl
                 MODE_PRIVATE) ;
         String text = shared.getString("KEY2" , " ") ;
         _lastSavedSong_.setText(text);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
