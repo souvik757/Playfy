@@ -40,14 +40,6 @@ public class playerActivity extends AppCompatActivity {
     int _first_open_ = -1 ;
     // semaphore like var to handle insertion to liked songs
     int _like_ = -1 ;
-
-    ModelClassSaved[] modelClassSaveds ;
-
-
-
- //   public void _add_(ModelClassSaved[] _saves_, TextView _text_ , R _image_ , String index){
- //       _saves_[index] = new ModelClassSaved(, _text_.toString() , index) ;
- //   }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         _first_open_++ ;
@@ -71,6 +63,9 @@ public class playerActivity extends AppCompatActivity {
         Intent i = getIntent() ;
         int Adapter_position = i.getIntExtra("position" , 0) ;
         String lib_context = i.getStringExtra("NameOfLib") ;
+        if(lib_context.equals("Liked Songs")){
+            _addTOlike_.setVisibility(View.INVISIBLE);
+        }
         _lib_name_.setText(lib_context);
         String _Song_Name_ = i.getStringExtra("NameOfSong") ;
 
@@ -85,11 +80,13 @@ public class playerActivity extends AppCompatActivity {
                     _addTOlike_.setBackground(getDrawable(R.drawable.baseline_cloud_done_24));
                     ModelClassSaved._list.add(new ModelClassSaved(R.drawable.lofi_bg , _Song_Name_ ,
                             " ")) ;
-
+                    Snackbar.make(view , "Added to liked Song" , Snackbar.LENGTH_LONG).show() ;
                 }
                 else
                 {
                     _addTOlike_.setBackground(getDrawable(R.drawable.baseline_cloud_download_24));
+                    ModelClassSaved._list.remove(ModelClassSaved._list.size()-1) ;
+                    Snackbar.make(view , "Removed from liked Song" , Snackbar.LENGTH_LONG).show() ;
                 }
             }
         });
