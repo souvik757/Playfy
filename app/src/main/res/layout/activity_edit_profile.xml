@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/_show_name"
-        android:layout_width="370dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/gradient_9th"
@@ -57,7 +57,7 @@
 
     <TextView
         android:id="@+id/_show_email_"
-        android:layout_width="370dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/gradient_9th"
